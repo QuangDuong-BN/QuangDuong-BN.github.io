@@ -44,3 +44,13 @@ body {
 .close:hover {
     color: #bbb;
 }
+
+h1 {
+    background-color: brown;
+    color: white;
+}
+
+.header {
+    background-color: brown;
+    color: white;
+}
