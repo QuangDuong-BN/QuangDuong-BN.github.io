@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Photo</title>
     <meta charset="UTF-8">
-    <meta
-            property="og:image"
-            content="https://developer.mozilla.org/mdn-social-share.png" />
-    <meta
-            property="og:description"
-            content="The Mozilla Developer Network (MDN) provides
+    <meta property="og:image" content="https://developer.mozilla.org/mdn-social-share.png" />
+    <meta property="og:description" content="The Mozilla Developer Network (MDN) provides
 information about Open Web technologies including HTML, CSS, and APIs for both websites
 and HTML Apps." />
     <meta property="og:title" content="Mozilla Developer Network" />
@@ -17,74 +14,76 @@ and HTML Apps." />
     <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
 
-<div class="slideshow-container">
+    <div class="slideshow-container">
 
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="img1.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img1.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img2.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img3.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
 
-    <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="img2.jpg" style="width:100%">
-        <div class="text">Caption Two</div>
+    <div class="link-gg-driver" style="display: flex">
+        <h1>
+            Link document:
+        </h1>
+        <button class="btn success" id="myButton">Open link document</button>
     </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="img3.jpg" style="width:100%">
-        <div class="text">Caption Three</div>
-    </div>
-</div>
-<br>
-
-<div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div>
-
-<div class="link-gg-driver" style="display: flex">
-    <h1>
-        Link document:
-    </h1>
-    <button class="btn success" id="myButton">Open link document</button>
-</div>
-<audio></audio>
+    <audio></audio>
 
 
-<script>
-    // truy cap trang web
-    document.getElementById("myButton").addEventListener("click", function () {
-        // Đoạn mã này sẽ chuyển hướng sang trang web khi nút được nhấn
-        window.location.href = "https://drive.google.com/drive/folders/1CpHCOo92kDUtala7UTBR-WzHkCT6z_e5?usp=sharing"; // Thay thế "https://www.example.com" bằng địa chỉ trang web bạn muốn truy cập
-    });
+    <script>
+        // truy cap trang web
+        document.getElementById("myButton").addEventListener("click", function () {
+            // Đoạn mã này sẽ chuyển hướng sang trang web khi nút được nhấn
+            window.location.href = "https://drive.google.com/drive/folders/1CpHCOo92kDUtala7UTBR-WzHkCT6z_e5?usp=sharing"; // Thay thế "https://www.example.com" bằng địa chỉ trang web bạn muốn truy cập
+        });
 
-    let slideIndex = 0;
-    showSlides();
+        let slideIndex = 0;
+        showSlides();
 
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 3000); // Change image every 2 seconds
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
